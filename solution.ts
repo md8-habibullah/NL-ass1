@@ -69,3 +69,27 @@ const filterByRating = (arr: bfr[]): string[] => {
 }
 
 
+
+
+type fau = {
+    id : number,
+    name: string;
+    email: string;
+    isActive: boolean;
+}
+
+const filterActiveUsers = (arr: fau[]): string[] => {
+    let arr2: any[] = []
+
+    arr.forEach(usr => {
+        if (usr.isActive == true) {
+            arr2.push(usr);
+        }
+    })
+
+    return arr2;
+
+}   
+
+
+
