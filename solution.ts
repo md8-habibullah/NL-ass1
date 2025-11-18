@@ -93,3 +93,16 @@ const filterActiveUsers = (arr: fau[]): string[] => {
 
 
 
+interface Book {
+    title : string;
+    author : string;
+    publishedYear : number;
+    isAvailable: boolean;
+}
+
+const printBookDetails = (obj:Book):void => {
+    const ter = `Title: ${obj.title}, Author: ${obj.author}, Published: ${obj.publishedYear}, Available: ${obj.isAvailable}`
+    console.log(ter);
+}
+
+
