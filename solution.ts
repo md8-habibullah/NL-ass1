@@ -1,6 +1,6 @@
 type fv = string | number | boolean;
 
-const formatValue = (value: fv) : fv => {
+const formatValue = (value: fv): fv => {
 
     if (typeof value === 'string') {
         return value.toUpperCase();
@@ -19,7 +19,7 @@ const formatValue = (value: fv) : fv => {
 
 type rsize = string | any[]
 
-const getLength = (arr : rsize): number=> {
+const getLength = (arr: rsize): number => {
     if (typeof arr === "string") {
         return arr.length;
     } else if (Array.isArray(arr)) {
@@ -35,16 +35,16 @@ const getLength = (arr : rsize): number=> {
 
 
 class Person {
-   name : string;
-   age : number ;
-   constructor (name : string, age :number ){
-    this.name = name;
-    this.age = age;
-   }
+    name: string;
+    age: number;
+    constructor(name: string, age: number) {
+        this.name = name;
+        this.age = age;
+    }
 
-   getDetails = () : string => {
-    return `'Name: ${this.name}, Age: ${this.age}'`
-   }
+    getDetails = (): string => {
+        return `'Name: ${this.name}, Age: ${this.age}'`
+    }
 }
 
 
@@ -72,7 +72,7 @@ const filterByRating = (arr: bfr[]): string[] => {
 
 
 type fau = {
-    id : number,
+    id: number,
     name: string;
     email: string;
     isActive: boolean;
@@ -89,20 +89,50 @@ const filterActiveUsers = (arr: fau[]): string[] => {
 
     return arr2;
 
-}   
+}
 
 
 
 interface Book {
-    title : string;
-    author : string;
-    publishedYear : number;
+    title: string;
+    author: string;
+    publishedYear: number;
     isAvailable: boolean;
 }
 
-const printBookDetails = (obj:Book):void => {
+const printBookDetails = (obj: Book): void => {
     const ter = `Title: ${obj.title}, Author: ${obj.author}, Published: ${obj.publishedYear}, Available: ${obj.isAvailable}`
     console.log(ter);
 }
+
+
+
+
+
+type vvv = string[] | number[]
+
+const getUniqueValues = (arr1: vvv, arr2: vvv) => {
+    const readyForReturn: (string | number)[] = []
+    const fullArray = arr1.concat(arr2);
+
+    fullArray.forEach((item) => {
+        let isFound = false;
+        if (readyForReturn.length == 0) {
+            readyForReturn.push(item)
+        } else {
+            for (const chk in readyForReturn) {
+                if (item == chk) {
+                    isFound = true;
+                    break;
+                }
+            }
+        }
+        if (!isFound == true) readyForReturn.push(item)
+
+    })
+    return readyForReturn;
+}
+
+
 
 
