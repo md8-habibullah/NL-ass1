@@ -50,3 +50,22 @@ class Person {
 
 
 
+type bfr = {
+    title: string;
+    rating: number;
+}
+
+const filterByRating = (arr: bfr[]): string[] => {
+    let arr2: any[] = []
+
+    arr.forEach(book => {
+        if (book.rating >= 4) {
+            arr2.push(book);
+        }
+    })
+
+    return arr2;
+
+}
+
+
