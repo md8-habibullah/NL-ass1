@@ -136,3 +136,24 @@ const getUniqueValues = (arr1: vvv, arr2: vvv) => {
 
 
 
+interface productList {
+    name: string;
+    price: number;
+    quantity: number;
+    discount?: number;
+}
+
+const calculateTotalPrice = (products: productList[]) => {
+    let totalPrice = 0;
+    products.forEach((product) => {
+        const { discount, price, quantity } = product;
+        if (discount == undefined || discount <= 0) {
+            totalPrice = totalPrice + (price * quantity)
+        } else {
+            const cutoff = price * (discount / 100)
+            totalPrice = totalPrice + ((price - cutoff) * quantity)
+        }
+    })
+    return totalPrice;
+}
+
