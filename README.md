@@ -3,6 +3,7 @@
 -----
 
 # TypeScript : আমরা আলোচনা করব `any`, `unknown`, `never` এর পার্থক্য এবং `Enum` এর ব্যবহার নিয়ে।
+# Be Appriciate, Pain to Write in Bangla (some keyboard isn't available Bangla, need use tools_)
 
 -----
 
